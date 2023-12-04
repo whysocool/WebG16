@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    {% set email=session['email'] %}
+    <h1 class="text-center text-success"> hello {{ email }}, please use the navbar above.</h1>
+{% endblock %}
+{% block javascript %}
+    <script>
+        document.getElementById("home").classList.add("active")
+    </script>
+{% endblock %}

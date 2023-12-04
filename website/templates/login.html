@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <form method="post"> {# send a post request to the backend #}
+        <h3 class="text-center">Login</h3>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email"
+                   class="form-control"
+                   id="email"  {# 对应上面的label for #}
+                   name="email" {# 用来给backend传值 #}
+                   placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+            <label for="password1" class="form-label">Password</label>
+            <input type="password"
+                   class="form-control"
+                   id="password1" {# 对应上面的label for #}
+                   name="password1" {# 用来给backend传值 #}
+                   placeholder="Enter password">
+        </div>
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+{% endblock %}
+{% block javascript %}
+    <script>
+        document.getElementById("login").classList.add("active")
+    </script>
+{% endblock %}

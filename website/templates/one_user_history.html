@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+    {% if history_list|length != 0 %}
+        <table class="table table-dark table-striped-columns table-hover ">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Accommodation Type</th>
+                <th scope="col">Accommodation Cost</th>
+                <th scope="col">Transportation Type</th>
+                <th scope="col">Transportation Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for document in history_list %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ document['email'] }}</td>
+                    <td>{{ document['destination'] }}</td>
+                    <td>{{ document.start_date }}</td>
+                    <td>{{ document.end_date }}</td>
+                    <td>{{ document.accommodation_type }}</td>
+                    <td>{{ document.accommodation_cost }}</td>
+                    <td>{{ document.transportation_type }}</td>
+                    <td>{{ document.transportation_cost }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+{% block javascript %}
+    <script>
+        document.getElementById("history").classList.add("active")
+    </script>
+{% endblock %}

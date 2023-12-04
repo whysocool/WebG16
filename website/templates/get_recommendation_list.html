@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Recommendation{% endblock %}
+{% block content %}
+    <ul class="list-group">
+        {% for recommendation  in  recommendation_list %}
+            <li class="list-group-item list-group-flush text-center">
+                {{ recommendation[0] }}
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+{% endblock %}
+{% block javascript %}
+    <script>
+        document.getElementById("recommendation").classList.add("active")
+    </script>
+{% endblock %}
